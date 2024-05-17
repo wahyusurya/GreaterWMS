@@ -41,6 +41,8 @@ services:
       - REDIS_REPLICATION_MODE=master
     networks:
       - basic
+volumes:
+  db_data:
 networks:
   basic:
     name: basic
