@@ -25,22 +25,22 @@ services:
     restart: always
     networks:
       - basic
-  redis:
-    image: "redis:alpine"
-    container_name: main_redis
-    command: redis-server --requirepass sOmE_Very_sEcUrE_pAsS
-    ports:
-      - 6379:6379
-    volumes:
-      - $PWD/../redis-data:/var/lib/redis
-      - $PWD/../redis.conf:/usr/local/etc/redis/redis.conf
-      # - /home/deploy/chronicle/redis-data:/var/lib/redis
-      # - /home/deploy/chronicle/redis.conf:/usr/local/etc/redis/redis.conf
-    restart: unless-stopped
-    environment:
-      - REDIS_REPLICATION_MODE=master
-    networks:
-      - basic
+  # redis:
+  #   image: "redis:alpine"
+  #   container_name: main_redis
+  #   command: redis-server --requirepass sOmE_Very_sEcUrE_pAsS
+  #   ports:
+  #     - 6379:6379
+  #   volumes:
+  #     - $PWD/../redis-data:/var/lib/redis
+  #     - $PWD/../redis.conf:/usr/local/etc/redis/redis.conf
+  #     # - /home/deploy/chronicle/redis-data:/var/lib/redis
+  #     # - /home/deploy/chronicle/redis.conf:/usr/local/etc/redis/redis.conf
+  #   restart: unless-stopped
+  #   environment:
+  #     - REDIS_REPLICATION_MODE=master
+  #   networks:
+  #     - basic
 volumes:
   db_data:
 networks:
